@@ -1,0 +1,16 @@
+{
+    "name": "Game.Kernel.Utils.R3",
+    "rootNamespace": "Game.Kernel.Utils.R3",
+    "references": [
+        "Game.Kernel"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

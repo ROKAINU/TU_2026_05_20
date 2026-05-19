@@ -1,0 +1,23 @@
+{
+    "name": "Game.Infrastructure.AssetPreloader",
+    "rootNamespace": "Game.Infrastructure.AssetPreloader",
+    "references": [
+        "Game.Domain",
+        "Game.Kernel",
+        "Game.Kernel.Utils.Abstruct",
+        "Game.Kernel.Utils.Cysharp",
+        "VContainer",
+        "UniTask",
+        "Unity.Addressables",
+        "Unity.ResourceManager"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

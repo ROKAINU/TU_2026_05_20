@@ -1,0 +1,19 @@
+{
+    "name": "Game.Kernel.Utils.Abstruct",
+    "rootNamespace": "Game.Kernel.Utils.Abstruct",
+    "references": [
+        "Game.Kernel",
+        "UniTask",
+        "Unity.Addressables",
+        "Unity.ResourceManager"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

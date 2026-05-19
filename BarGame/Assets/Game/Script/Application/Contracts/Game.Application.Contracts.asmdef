@@ -1,0 +1,17 @@
+{
+    "name": "Game.Application.Contracts",
+    "rootNamespace": "Game.Application.Contracts",
+    "references": [
+        "UniTask",
+        "Game.Domain"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

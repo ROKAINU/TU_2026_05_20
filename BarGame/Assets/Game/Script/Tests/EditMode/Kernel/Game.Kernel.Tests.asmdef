@@ -1,0 +1,14 @@
+{
+  "name": "Game.Kernel.EditTests",
+  "rootNamespace": "Game.Kernel.EditTests",
+  "references": [
+    "Game.Kernel"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "autoReferenced": false
+}

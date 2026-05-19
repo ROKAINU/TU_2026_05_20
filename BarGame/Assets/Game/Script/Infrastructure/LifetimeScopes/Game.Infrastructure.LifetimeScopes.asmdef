@@ -1,0 +1,33 @@
+{
+    "name": "Game.Infrastructure.LifetimeScopes",
+    "rootNamespace": "Game.Infrastructure.LifetimeScopes",
+    "references": [
+        "Game.Domain",
+        "Game.Application",
+        "Game.Application.Contracts",
+        "Game.Infrastructure",
+        "Game.Infrastructure.Save",
+        "Game.Infrastructure.AssetPreloader",
+        "Game.Presentation",
+        "Game.Kernel",
+        "Game.Kernel.Utils.Abstruct",
+        "Game.Kernel.Utils.R3",
+        "Game.Kernel.Utils.Cysharp",
+        "VContainer",
+        "VContainer.Unity",
+        "R3",
+        "UniTask",
+        "UnityEngine",
+        "MessagePipe",
+        "MessagePipe.VContainer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

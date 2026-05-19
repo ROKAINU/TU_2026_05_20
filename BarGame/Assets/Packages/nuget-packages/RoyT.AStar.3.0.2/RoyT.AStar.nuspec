@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>RoyT.AStar</id>
+    <version>3.0.2</version>
+    <authors>Roy Triesscheijn</authors>
+    <owners>Roy Triesscheijn</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <projectUrl>https://github.com/roy-t/AStar/</projectUrl>
+    <description>A fast 2D path finding library based on the A* algorithm. Works with both grids and graphs. Supports .NETStandard 2.0 and higher. This library has no external dependencies.</description>
+    <repository url="https://github.com/roy-t/AStar/" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>

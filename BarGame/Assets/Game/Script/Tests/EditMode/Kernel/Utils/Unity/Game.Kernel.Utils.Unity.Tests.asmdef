@@ -1,0 +1,23 @@
+{
+    "name": "Game.Kernel.Utils.Unity.EditTests",
+    "rootNamespace": "Game.Kernel.Utils.Unity.EditTests",
+    "references": [
+        "Game.Kernel",
+        "Game.Kernel.Utils.Unity"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

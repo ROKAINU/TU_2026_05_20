@@ -1,0 +1,58 @@
+name: Check Meta Files
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+jobs:
+  check-meta:
+    name: Check for missing or orphaned .meta files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Check missing .meta files
+        run: |
+          if [ ! -d "BarGame/Assets" ]; then
+            echo "::error::BarGame/Assets directory not found"
+            exit 1
+          fi
+          MISSING=0
+          while IFS= read -r -d '' item; do
+            if [ ! -f "${item}.meta" ]; then
+              echo "::error::Missing .meta for: $item"
+              MISSING=$((MISSING + 1))
+            fi
+          done < <(find BarGame/Assets \
+            -not -name "*.meta" \
+            -not -type d \
+            -not -path "*/nuget-packages/*" \
+            -print0)
+          if [ $MISSING -gt 0 ]; then
+            echo "$MISSING missing .meta file(s) found."
+            exit 1
+          else
+            echo "All .meta files are present."
+          fi
+      - name: Check orphaned .meta files #空のディレクトリは追跡されずにWarningと検出される
+        run: |
+          if [ ! -d "BarGame/Assets" ]; then
+            echo "::error::BarGame/Assets directory not found"
+            exit 1
+          fi
+          ORPHANED=0
+          while IFS= read -r -d '' meta; do
+            target="${meta%.meta}"
+            if [ ! -e "$target" ]; then
+              echo "::warning::Orphaned .meta (no target): $meta"
+              ORPHANED=$((ORPHANED + 1))
+            fi
+          done < <(find BarGame/Assets \
+            -name "*.meta" \
+            -not -path "*/nuget-packages/*" \
+            -print0)
+          if [ $ORPHANED -gt 0 ]; then
+            echo "$ORPHANED orphaned .meta file(s) found."
+          else
+            echo "No orphaned .meta files."
+          fi

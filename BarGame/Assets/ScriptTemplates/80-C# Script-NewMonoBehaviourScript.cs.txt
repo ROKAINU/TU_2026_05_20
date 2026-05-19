@@ -1,0 +1,24 @@
+using UnityEngine;
+
+using debug = UnityEngine.Debug;
+
+namespace Game.Runtime
+{
+    public class #SCRIPTNAME# : MonoBehaviour
+    {
+        void Awake()
+        {
+
+        }
+
+        void Start()
+        {
+
+        }
+
+        void Update()
+        {
+
+        }
+    }
+}

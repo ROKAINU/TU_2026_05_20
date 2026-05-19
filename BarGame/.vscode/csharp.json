@@ -1,0 +1,48 @@
+{
+  "State Pattern": {
+    "prefix": "state",
+    "body": [
+      "public class ${1:NewState} : IGameState",
+      "{",
+      "    public void Enter()",
+      "    {",
+      "        $0",
+      "    }",
+      "",
+      "    public void Update()",
+      "    {",
+      "    }",
+      "",
+      "    public void Exit()",
+      "    {",
+      "    }",
+      "}"
+    ],
+    "description": "Game State パターン"
+  },
+
+  "UseCase Pattern": {
+    "prefix": "usecase",
+    "body": [
+      "public class ${1:NewUseCase} : IUseCase",
+      "{",
+      "    public async Task Execute(${2:parameter})",
+      "    {",
+      "        $0",
+      "    }",
+      "}"
+    ],
+    "description": "UseCase パターン"
+  },
+
+  "Service Interface": {
+    "prefix": "iservice",
+    "body": [
+      "public interface I${1:ServiceName}",
+      "{",
+      "    ${2:ReturnType} ${3:MethodName}(${4:parameter});",
+      "}"
+    ],
+    "description": "Service インターフェース"
+  }
+}

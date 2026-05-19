@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; justify-content: flex-start; align-items: flex-start; margin-top: 20px; margin-right: 20px; margin-bottom: 20px; margin-left: 20px;">
+        <ui:Label text="Score: 0" name="score-text" style="font-size: 64px;"/>
+        <ui:Label text="Time: 0" name="timer-text" style="font-size: 64px;"/>
+        <ui:Label text="クリックでスコアを増やす" name="play-guide-text" style="font-size: 32px;"/>
+    </ui:VisualElement>
+</ui:UXML>

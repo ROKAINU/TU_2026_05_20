@@ -1,0 +1,13 @@
+{
+  "name": "Game.Domain.EditTests",
+  "rootNamespace": "Game.Domain.EditTests",
+  "references": [
+    "Game.Domain"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+    "name": "Game.Application.PlayTests",
+    "rootNamespace": "Game.Application.PlayTests",
+    "references": [
+        "Game.Domain",
+        "Game.Application",
+        "Game.Application.Contracts",
+        "Game.Kernel",
+        "Game.Kernel.Utils.R3",
+        "Game.Kernel.Utils.Cysharp",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "UniTask",
+        "VContainer",
+        "R3.Unity"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        "nunit.framework.dll",
+        "UnityEngine.TestRunner.dll",
+        "UnityEditor.TestRunner.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

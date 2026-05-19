@@ -1,0 +1,25 @@
+{
+    "name": "Game.Infrastructure.Save.EditTests",
+    "rootNamespace": "Game.Infrastructure.Save.EditTests",
+    "references": [
+        "Game",
+        "Game.Domain",
+        "Game.Infrastructure.Save",
+        "Game.Kernel"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

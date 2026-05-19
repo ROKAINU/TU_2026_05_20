@@ -1,0 +1,31 @@
+{
+    "name": "Game.Application.EditTests",
+    "rootNamespace": "Game.Application.EditTests",
+    "references": [
+        "Game.Domain",
+        "Game.Application",
+        "Game.Application.Contracts",
+        "Game.Kernel",
+        "Game.Kernel.Utils.Cysharp",
+        "Game.Kernel.Utils.R3",
+        "UniTask",
+        "MessagePipe",
+        "R3.Unity",
+        "R3.Unity.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

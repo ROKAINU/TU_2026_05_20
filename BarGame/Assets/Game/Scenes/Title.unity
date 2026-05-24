@@ -5171,7 +5171,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30BF\u30A4\u30C8\u30EB\nTitle"
+  m_text: BarGame
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a7b1bb276577d2647909218bb1905cc2, type: 2}
   m_sharedMaterial: {fileID: -3045290194457367439, guid: a7b1bb276577d2647909218bb1905cc2, type: 2}

@@ -1,0 +1,212 @@
+[
+  {
+    "drinkId": "Highball",
+    "displayName": "ハイボール",
+    "tags": ["Refreshing", "Light"],
+    "ingredients": ["Whiskey", "Soda"],
+    "unlockWeek": 1
+  },
+  {
+    "drinkId": "GinTonic",
+    "displayName": "ジントニック",
+    "tags": ["Refreshing", "Light"],
+    "ingredients": ["Gin", "TonicWater"],
+    "unlockWeek": 1
+  },
+  {
+    "drinkId": "RumTonic",
+    "displayName": "ラムトニック",
+    "tags": ["Refreshing", "Light"],
+    "ingredients": ["Rum", "TonicWater"],
+    "unlockWeek": 2
+  },
+  {
+    "drinkId": "VodkaTonic",
+    "displayName": "ウォッカトニック",
+    "tags": ["Refreshing", "Light"],
+    "ingredients": ["Vodka", "TonicWater"],
+    "unlockWeek": 1
+  },
+  {
+    "drinkId": "CassisOrange",
+    "displayName": "カシスオレンジ",
+    "tags": ["Sweet", "Comforting"],
+    "ingredients": ["Cassis", "OrangeJuice"],
+    "unlockWeek": 1
+  },
+  {
+    "drinkId": "CassisMilk",
+    "displayName": "カシスミルク",
+    "tags": ["Sweet", "Comforting"],
+    "ingredients": ["Cassis", "Milk"],
+    "unlockWeek": 1
+  },
+  {
+    "drinkId": "CassisSoda",
+    "displayName": "カシスソーダ",
+    "tags": ["Sweet", "Refreshing"],
+    "ingredients": ["Cassis", "Soda"],
+    "unlockWeek": 1
+  },
+  {
+    "drinkId": "KaluaMilk",
+    "displayName": "カルーアミルク",
+    "tags": ["Sweet", "Calm"],
+    "ingredients": ["CoffeeLiqueur", "Milk"],
+    "unlockWeek": 1
+  },
+  {
+    "drinkId": "BlackRussian",
+    "displayName": "ブラックルシアン",
+    "tags": ["Strong", "Calm"],
+    "ingredients": ["Vodka", "CoffeeLiqueur"],
+    "unlockWeek": 1
+  },
+  {
+    "drinkId": "KaluaSoda",
+    "displayName": "カルーアソーダ",
+    "tags": ["Sweet", "Refreshing"],
+    "ingredients": ["CoffeeLiqueur", "Soda"],
+    "unlockWeek": 1
+  },
+  {
+    "drinkId": "ScrewDriver",
+    "displayName": "スクリュードライバー",
+    "tags": ["Sweet", "Light"],
+    "ingredients": ["Vodka", "OrangeJuice"],
+    "unlockWeek": 1
+  },
+  {
+    "drinkId": "CubaLibre",
+    "displayName": "キューバリブレ",
+    "tags": ["Refreshing", "fizzy"],
+    "ingredients": ["Rum", "Soda", "Lime"],
+    "unlockWeek": 2
+  },
+  {
+    "drinkId": "RumSoda",
+    "displayName": "ラムソーダ",
+    "tags": ["Refreshing", "Light"],
+    "ingredients": ["Rum", "Soda"],
+    "unlockWeek": 2
+  },
+  {
+    "drinkId": "VodkaSoda",
+    "displayName": "ウォッカソーダ",
+    "tags": ["Refreshing", "Light"],
+    "ingredients": ["Vodka", "Soda"],
+    "unlockWeek": 1
+  },
+  {
+    "drinkId": "VodkaLime",
+    "displayName": "ウォッカライム",
+    "tags": ["Refreshing", "Strong"],
+    "ingredients": ["Vodka", "Lime"],
+    "unlockWeek": 2
+  },
+  {
+    "drinkId": "Gimlet",
+    "displayName": "ギムレット",
+    "tags": ["Refreshing", "Strong"],
+    "ingredients": ["Gin", "Lime"],
+    "unlockWeek": 2
+  },
+  {
+    "drinkId": "GinSoda",
+    "displayName": "ジンソーダ",
+    "tags": ["Refreshing", "Light"],
+    "ingredients": ["Gin", "Soda"],
+    "unlockWeek": 1
+  },
+  {
+    "drinkId": "TequilaSoda",
+    "displayName": "テキーラソーダ",
+    "tags": ["fizzy", "Strong"],
+    "ingredients": ["Tequila", "Soda"],
+    "unlockWeek": 2
+  },
+  {
+    "drinkId": "TequilaSunrise",
+    "displayName": "テキーラサンライズ",
+    "tags": ["Sweet", "Light"],
+    "ingredients": ["Tequila", "OrangeJuice", "Grenadine"],
+    "unlockWeek": 3
+  },
+  {
+    "drinkId": "CampariSoda",
+    "displayName": "カンパリソーダ",
+    "tags": ["Bitter", "Refreshing"],
+    "ingredients": ["Campari", "Soda"],
+    "unlockWeek": 4
+  },
+  {
+    "drinkId": "CampariOrange",
+    "displayName": "カンパリオレンジ",
+    "tags": ["Bitter", "Sweet"],
+    "ingredients": ["Campari", "OrangeJuice"],
+    "unlockWeek": 4
+  },
+  {
+    "drinkId": "Negroni",
+    "displayName": "ネグローニ",
+    "tags": ["Bitter", "Strong"],
+    "ingredients": ["Gin", "Campari", "Vermouth"],
+    "unlockWeek": 4
+  },
+  {
+    "drinkId": "Martini",
+    "displayName": "マティーニ",
+    "tags": ["Strong", "fizzy"],
+    "ingredients": ["Gin", "Vermouth"],
+    "unlockWeek": 3
+  },
+  {
+    "drinkId": "WhiskeySoda",
+    "displayName": "ウイスキーソーダ",
+    "tags": ["Refreshing", "Light"],
+    "ingredients": ["Whiskey", "Soda"],
+    "unlockWeek": 1
+  },
+  {
+    "drinkId": "WhiskeyOrange",
+    "displayName": "ウイスキーオレンジ",
+    "tags": ["Sweet", "Light"],
+    "ingredients": ["Whiskey", "OrangeJuice"],
+    "unlockWeek": 1
+  },
+  {
+    "drinkId": "Whiskey",
+    "displayName": "ウイスキー（ベース）",
+    "tags": ["Strong", "Bitter"],
+    "ingredients": [],
+    "unlockWeek": 1
+  },
+  {
+    "drinkId": "Gin",
+    "displayName": "ジン（ベース）",
+    "tags": ["Refreshing", "Strong"],
+    "ingredients": [],
+    "unlockWeek": 1
+  },
+  {
+    "drinkId": "Vodka",
+    "displayName": "ウォッカ（ベース）",
+    "tags": ["Strong", "Light"],
+    "ingredients": [],
+    "unlockWeek": 1
+  },
+  {
+    "drinkId": "Rum",
+    "displayName": "ラム（ベース）",
+    "tags": ["Sweet", "Strong"],
+    "ingredients": [],
+    "unlockWeek": 2
+  },
+  {
+    "drinkId": "Tequila",
+    "displayName": "テキーラ（ベース）",
+    "tags": ["fizzy", "Strong"],
+    "ingredients": [],
+    "unlockWeek": 2
+  }
+]

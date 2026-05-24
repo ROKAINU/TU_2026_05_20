@@ -1,0 +1,19 @@
+{
+    "name": "Game.Application.Contracts.Cysharp",
+    "rootNamespace": "Game.Application.Contracts.Cysharp",
+    "references": [
+        "Game.Domain",
+        "Game.Application.Contracts",
+        "Game.Kernel",
+        "UniTask"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

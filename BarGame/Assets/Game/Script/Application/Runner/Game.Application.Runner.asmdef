@@ -5,6 +5,7 @@
         "Game.Domain",
         "Game.Application",
         "Game.Application.Contracts",
+        "Game.Application.Contracts.Cysharp",
         "Game.Kernel",
         "Game.Kernel.Utils.Cysharp",
         "UniTask",

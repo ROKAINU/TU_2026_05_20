@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Game.Application.Contracts;
 using Game.Domain;
 
 namespace Game.Infrastructure

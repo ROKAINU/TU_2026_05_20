@@ -1,0 +1,107 @@
+[
+  {
+    "ingredientId": "Whiskey",
+    "displayName": "ウイスキー",
+    "type": "Base",
+    "tags": ["Strong", "Bitter"],
+    "unlockWeek": 1
+  },
+  {
+    "ingredientId": "Gin",
+    "displayName": "ジン",
+    "type": "Base",
+    "tags": ["Refreshing", "Strong"],
+    "unlockWeek": 1
+  },
+  {
+    "ingredientId": "Vodka",
+    "displayName": "ウォッカ",
+    "type": "Base",
+    "tags": ["Strong", "Light"],
+    "unlockWeek": 1
+  },
+  {
+    "ingredientId": "Rum",
+    "displayName": "ラム",
+    "type": "Base",
+    "tags": ["Sweet", "Strong"],
+    "unlockWeek": 2
+  },
+  {
+    "ingredientId": "Tequila",
+    "displayName": "テキーラ",
+    "type": "Base",
+    "tags": ["fizzy", "Strong"],
+    "unlockWeek": 2
+  },
+  {
+    "ingredientId": "Vermouth",
+    "displayName": "ベルモット",
+    "type": "Liqueur",
+    "tags": ["Bitter", "Calm"],
+    "unlockWeek": 3
+  },
+  {
+    "ingredientId": "Grenadine",
+    "displayName": "グレナデン",
+    "type": "Liqueur",
+    "tags": ["Sweet", "Light"],
+    "unlockWeek": 3
+  },
+  {
+    "ingredientId": "Cassis",
+    "displayName": "カシス",
+    "type": "Liqueur",
+    "tags": ["Sweet", "Comforting"],
+    "unlockWeek": 1
+  },
+  {
+    "ingredientId": "CoffeeLiqueur",
+    "displayName": "コーヒーリキュール",
+    "type": "Liqueur",
+    "tags": ["Sweet", "Calm"],
+    "unlockWeek": 1
+  },
+  {
+    "ingredientId": "Campari",
+    "displayName": "カンパリ",
+    "type": "Liqueur",
+    "tags": ["Bitter", "Strong"],
+    "unlockWeek": 4
+  },
+  {
+    "ingredientId": "Soda",
+    "displayName": "炭酸",
+    "type": "Mixer",
+    "tags": ["Refreshing", "Light"],
+    "unlockWeek": 1
+  },
+  {
+    "ingredientId": "TonicWater",
+    "displayName": "トニックウォーター",
+    "type": "Mixer",
+    "tags": ["Refreshing", "Bitter"],
+    "unlockWeek": 1
+  },
+  {
+    "ingredientId": "OrangeJuice",
+    "displayName": "オレンジジュース",
+    "type": "Mixer",
+    "tags": ["Sweet", "Refreshing"],
+    "unlockWeek": 1
+  },
+  {
+    "ingredientId": "Milk",
+    "displayName": "ミルク",
+    "type": "Mixer",
+    "tags": ["Comforting", "Sweet"],
+    "unlockWeek": 1
+  },
+  {
+    "ingredientId": "Lime",
+    "displayName": "ライム",
+    "type": "Mixer",
+    "tags": ["Refreshing", "fizzy"],
+    "unlockWeek": 2
+  }
+]

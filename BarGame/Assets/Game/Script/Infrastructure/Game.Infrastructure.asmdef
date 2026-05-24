@@ -11,7 +11,10 @@
         "MessagePipe",
         "MessagePipe.VContainer",
         "UniTask",
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "Ink-Libraries",
+        "InkEditor",
+        "Ink.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

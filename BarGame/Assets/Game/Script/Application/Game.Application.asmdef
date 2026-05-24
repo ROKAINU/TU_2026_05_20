@@ -4,15 +4,7 @@
     "references": [
         "Game.Domain",
         "Game.Application.Contracts",
-        "Game.Kernel",
-        "Game.Kernel.Utils.R3",
-        "Game.Kernel.Utils.Cysharp",
-        "VContainer",
-        "MessagePipe",
-        "R3",
-        "UniTask",
-        "UnityEngine",
-        "Unity.InputSystem"
+        "Game.Kernel"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -22,5 +14,5 @@
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
-    "noEngineReferences": false
+    "noEngineReferences": true
 }

@@ -5,6 +5,7 @@ using MessagePipe;
 using MessagePipe.VContainer;
 using Game.Domain;
 using Game.Application;
+using Game.Application.Runner;
 using Game.Presentation;
 using Game.Presentation.View;
 
@@ -18,10 +19,6 @@ namespace Game.Infrastructure.LifetimeScopes
 
         protected override void Configure(IContainerBuilder builder)
         {
-            // MessagePipe 設定
-            var messagePipeOptions = builder.RegisterMessagePipe();
-            builder.RegisterMessageBroker<ResultStartedMessage>(messagePipeOptions);
-
             // ========================================
             // Application層
             // ========================================

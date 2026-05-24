@@ -1,4 +1,3 @@
-// Assets/Scripts/Core/Domain/Game/GameMessages.cs
 namespace Game.Domain
 {
     /// <summary>

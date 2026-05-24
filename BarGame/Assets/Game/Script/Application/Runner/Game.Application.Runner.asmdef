@@ -1,0 +1,15 @@
+{
+    "name": "Game.Application.Runner",
+    "rootNamespace": "Game.Application.Runner",
+    "references": [
+        "Game.Domain",
+        "Game.Application",
+        "Game.Application.Contracts",
+        "Game.Kernel",
+        "Game.Kernel.Utils.Cysharp",
+        "UniTask",
+        "VContainer",
+        "VContainer.Unity"
+    ],
+    "noEngineReferences": false
+}

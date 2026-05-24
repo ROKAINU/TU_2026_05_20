@@ -2,7 +2,9 @@
     "name": "Game.Tools",
     "rootNamespace": "Game.Tools",
     "references": [
-        "ToolbarExtender.Editor"
+        "ToolbarExtender.Editor",
+        "ExcelDataReader.dll",
+        "System.IO.Packaging.dll"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

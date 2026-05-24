@@ -1,5 +1,5 @@
 using System.Threading;
-using Cysharp.Threading.Tasks;
+using System.Threading.Tasks;
 using Game.Domain;
 
 namespace Game.Application.Contracts
@@ -13,6 +13,6 @@ namespace Game.Application.Contracts
         /// <param name="dt">経過時間 DeltaTime</param>
         /// <param name="ct">キャンセル トークン</param>
         /// <returns>ゲーム終了結果。継続中は null</returns>
-        UniTask<GameMainLoopResult?> TickAsync(float dt, CancellationToken ct);
+        Task<GameMainLoopResult?> TickAsync(float dt, CancellationToken ct);
     }
 }

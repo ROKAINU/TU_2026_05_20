@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 using System.Threading;
-using Cysharp.Threading.Tasks;
+using System.Threading.Tasks;
 using MemoryPack;
 using UnityEngine;
 using Game.Application.Contracts;
@@ -28,7 +28,7 @@ namespace Game.Infrastructure.Save
             _savePath = Path.Combine(UnityEngine.Application.persistentDataPath, "save.dat");
         }
 
-        private async UniTask<SaveFileRoot> GetOrLoadRootAsync(CancellationToken ct)
+        private async Task<SaveFileRoot> GetOrLoadRootAsync(CancellationToken ct)
         {
             if (_cache != null) return _cache;
 
@@ -38,7 +38,7 @@ namespace Game.Infrastructure.Save
             return _cache;
         }
 
-        public async UniTask SaveGameDataAsync(
+        public async Task SaveGameDataAsync(
             GameSaveData saveData,
             CancellationToken ct = default)
         {
@@ -48,13 +48,13 @@ namespace Game.Infrastructure.Save
             await SaveRootAsync(root, ct);
         }
 
-        public async UniTask<GameSaveData> LoadGameDataAsync(CancellationToken ct = default)
+        public async Task<GameSaveData> LoadGameDataAsync(CancellationToken ct = default)
         {
             var root = await GetOrLoadRootAsync(ct);
             return root.GameData.ToGame();
         }
 
-        public async UniTask SaveSettingsDataAsync(
+        public async Task SaveSettingsDataAsync(
             SettingSaveData saveData,
             CancellationToken ct = default)
         {
@@ -64,20 +64,20 @@ namespace Game.Infrastructure.Save
             await SaveRootAsync(root, ct);
         }
 
-        public async UniTask<SettingSaveData> LoadSettingsDataAsync(CancellationToken ct = default)
+        public async Task<SettingSaveData> LoadSettingsDataAsync(CancellationToken ct = default)
         {
             var root = await GetOrLoadRootAsync(ct);
             return root.SettingData.ToGame();
         }
 
-        public async UniTask InitializeAsync(CancellationToken ct = default)
+        public async Task InitializeAsync(CancellationToken ct = default)
         {
             _cache = null;
             var root = new SaveFileRoot();
             await SaveRootAsync(root, ct);
         }
 
-        private async UniTask SaveRootAsync(
+        private async Task SaveRootAsync(
             SaveFileRoot root,
             CancellationToken ct)
         {
@@ -99,7 +99,7 @@ namespace Game.Infrastructure.Save
             }
         }
 
-        private async UniTask<SaveFileRoot> LoadRootAsync(CancellationToken ct)
+        private async Task<SaveFileRoot> LoadRootAsync(CancellationToken ct)
         {
             if (!File.Exists(_savePath))
             {

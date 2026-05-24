@@ -1,6 +1,6 @@
 {
-    "name": "Game.Kernel.Utils.Abstruct",
-    "rootNamespace": "Game.Kernel.Utils.Abstruct",
+    "name": "Game.Kernel.Utils.Abstract",
+    "rootNamespace": "Game.Kernel.Utils.Abstract",
     "references": [
         "Game.Kernel",
         "UniTask",

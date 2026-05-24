@@ -5,7 +5,7 @@ using Cysharp.Threading.Tasks;
 
 namespace Game.Kernel.Utils.Cysharp
 {
-    public sealed class AsyncCommandQueue<TCommand> : IAsyncCommandQueue<TCommand>
+    public sealed class AsyncCommandQueue<TCommand>
     {
         private readonly Queue<TCommand> _queue = new();
         private UniTaskCompletionSource<bool>? _signal;

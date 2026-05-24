@@ -4,7 +4,7 @@
     "references": [
         "Game.Domain",
         "Game.Kernel",
-        "Game.Kernel.Utils.Abstruct",
+        "Game.Kernel.Utils.Abstract",
         "Game.Kernel.Utils.Cysharp",
         "VContainer",
         "UniTask",

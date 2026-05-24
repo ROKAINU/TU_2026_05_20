@@ -7,7 +7,7 @@
         "Game.Application.Contracts",
         "Game.Infrastructure",
         "Game.Kernel",
-        "Game.Kernel.Utils.Abstruct",
+        "Game.Kernel.Utils.Abstract",
         "Game.Kernel.Utils.R3",
         "Game.Kernel.Utils.Cysharp",
         "VContainer",

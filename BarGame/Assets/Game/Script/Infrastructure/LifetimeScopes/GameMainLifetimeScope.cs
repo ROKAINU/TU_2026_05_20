@@ -6,10 +6,14 @@ using MessagePipe.VContainer;
 using Game.Domain;
 using Game.Application;
 using Game.Application.Contracts;
+using Game.Application.Runner;
 using Game.Infrastructure;
 using Game.Infrastructure.Save;
+using Game.Infrastructure.Messaging;
 using Game.Presentation;
+using Game.Presentation.SceneTransition;
 using Game.Presentation.View;
+using Game.Kernel;
 using Game.Kernel.Utils.R3;
 using Game.Kernel.Utils.Cysharp;
 
@@ -22,19 +26,30 @@ namespace Game.Infrastructure.LifetimeScopes
 
         protected override void Configure(IContainerBuilder builder)
         {
-            // MessagePipe 設定
-            var messagePipeOptions = builder.RegisterMessagePipe();
-            builder.RegisterMessageBroker<GameStartedMessage>(messagePipeOptions);
-            builder.RegisterMessageBroker<GamePauseMessage>(messagePipeOptions);
-            builder.RegisterMessageBroker<GameFinishedMessage>(messagePipeOptions);
+            builder.Register<IMasterDataRepository, MasterDataRepository>(Lifetime.Scoped);
 
-            builder.Register<IAsyncCommandQueue<GameCommand>, AsyncCommandQueue<GameCommand>>(Lifetime.Scoped);
-            builder.Register<ICommandHandler<GameCommand>, GameCommandHandler>(Lifetime.Scoped);
+            builder.Register<AsyncCommandQueue<GameCommand>, AsyncCommandQueue<GameCommand>>(Lifetime.Scoped);
+            builder.Register<AddScoreCommandProcessor>(Lifetime.Scoped);
+            builder.Register<ShowJsonCommandProcessor>(Lifetime.Scoped);
+            builder.Register<ICommandHandler<GameCommand>>(
+                container => new GameCommandHandler(
+                    new IGameCommandProcessor[]
+                    {
+                        container.Resolve<AddScoreCommandProcessor>(),
+                        container.Resolve<ShowJsonCommandProcessor>(),
+                    },
+                    container.Resolve<LoggerBase>()
+                ),
+                Lifetime.Scoped
+            );
 
             // ========================================
             // Domain層
             // ========================================
-            builder.Register<Store<GameMainState>>(Lifetime.Scoped).WithParameter(GameMainState.Default);
+            builder.Register<Store<GameMainState>>(Lifetime.Scoped)
+                .WithParameter(GameMainState.Default)
+                .As<IStore<GameMainState>>().AsSelf();
+       
 
             // ========================================
             // Application層
@@ -49,7 +64,7 @@ namespace Game.Infrastructure.LifetimeScopes
             // Infrastructure層
             // ========================================
             builder.Register<IInputService, RealInputService>(Lifetime.Scoped);
-            builder.Register<InputEmitter>(Lifetime.Scoped);
+            builder.Register<ICommandEmitter, InputEmitter>(Lifetime.Scoped);
 
             // ========================================
             // Presentation層

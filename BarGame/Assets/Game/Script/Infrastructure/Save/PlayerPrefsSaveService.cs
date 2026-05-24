@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine;
-using Cysharp.Threading.Tasks;
 using VContainer.Unity;
 using Game;
 using Game.Domain;
@@ -39,9 +39,9 @@ namespace Game.Infrastructure.Save
             _saveMigrator = saveMigrator;
         }
 
-        public UniTask SaveGameDataAsync(GameSaveData saveData, CancellationToken ct = default)
+        public Task SaveGameDataAsync(GameSaveData saveData, CancellationToken ct = default)
         {
-            if (ct.IsCancellationRequested) return UniTask.FromCanceled(ct);
+            if (ct.IsCancellationRequested) return Task.FromCanceled(ct);
 
             PlayerPrefs.SetInt(Ppkey(VersionMajorKey), GameVersion.Major);
             PlayerPrefs.SetInt(Ppkey(VersionMinorKey), GameVersion.Minor);
@@ -50,10 +50,10 @@ namespace Game.Infrastructure.Save
             PlayerPrefs.SetInt(Ppkey(TestHighScoreKey), saveData.TestHighScore);
             PlayerPrefs.Save();
 
-            return UniTask.CompletedTask;
+            return Task.CompletedTask;
         }
 
-        public async UniTask<GameSaveData> LoadGameDataAsync(CancellationToken ct = default)
+        public async Task<GameSaveData> LoadGameDataAsync(CancellationToken ct = default)
         {
             if (ct.IsCancellationRequested) throw new OperationCanceledException(ct);
             
@@ -113,20 +113,20 @@ namespace Game.Infrastructure.Save
             }
         }
 
-        public UniTask SaveSettingsDataAsync(SettingSaveData saveData, CancellationToken ct = default)
+        public Task SaveSettingsDataAsync(SettingSaveData saveData, CancellationToken ct = default)
         {
-            if (ct.IsCancellationRequested) return UniTask.FromCanceled(ct);
+            if (ct.IsCancellationRequested) return Task.FromCanceled(ct);
 
             PlayerPrefs.SetFloat(Ppkey(BGMVolumeKey), saveData.BGMVolume);
             PlayerPrefs.SetFloat(Ppkey(SEVolumeKey), saveData.SEVolume);
             PlayerPrefs.Save();
 
-            return UniTask.CompletedTask;
+            return Task.CompletedTask;
         }
 
-        public UniTask<SettingSaveData> LoadSettingsDataAsync(CancellationToken ct = default)
+        public Task<SettingSaveData> LoadSettingsDataAsync(CancellationToken ct = default)
         {
-            if (ct.IsCancellationRequested) return UniTask.FromCanceled<SettingSaveData>(ct);
+            if (ct.IsCancellationRequested) return Task.FromCanceled<SettingSaveData>(ct);
 
             try
             {
@@ -137,16 +137,16 @@ namespace Game.Infrastructure.Save
                     seVolume: PlayerPrefs.GetFloat(Ppkey(SEVolumeKey), def.SEVolume)
                 );
 
-                return UniTask.FromResult(data);
+                return Task.FromResult(data);
             }
             catch (Exception ex)
             {
                 _logger.LogException(ex, "An error occurred while loading settings data. Returning default values.");
-                return UniTask.FromResult(SettingSaveData.Default());
+                return Task.FromResult(SettingSaveData.Default());
             }
         }
 
-        public async UniTask InitializeAsync(CancellationToken ct = default)
+        public async Task InitializeAsync(CancellationToken ct = default)
         {
             await SaveGameDataAsync(GameSaveData.Default(), ct);
             await SaveSettingsDataAsync(SettingSaveData.Default(), ct);

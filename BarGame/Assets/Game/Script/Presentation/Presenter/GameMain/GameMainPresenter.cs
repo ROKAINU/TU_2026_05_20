@@ -5,6 +5,7 @@ using Cysharp.Threading.Tasks;
 using MessagePipe;
 using VContainer.Unity;
 using Game.Domain;
+using Game.Infrastructure;
 using Game.Presentation.SceneTransition;
 using Game.Presentation.View;
 

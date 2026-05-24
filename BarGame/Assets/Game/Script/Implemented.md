@@ -11,7 +11,7 @@
     ゲームのセーブデータをストアに適用する。セーブデータの内容に基づいて、ストアの状態を更新する。
 
 #### Kernel
-### Abstruct
+### Abstract
 1. Logger
     Logを抽象化したもの。
 
@@ -109,7 +109,7 @@
     （間違って参照すると InvalidOperationException を投げてバグに気づける設計）
 
 ### Utils
-## Abstruct
+## Abstract
 1. IAssetPreloader
     アセットの事前ロード（プリロード）と取得を担うインターフェース。
 
@@ -119,7 +119,7 @@
     入力発生側                    処理側
     （誰かがコマンドを出す）  →  （誰かがコマンドを処理する）
 
-    ICommandEmitter             IAsyncCommandQueue
+    ICommandEmitter             AsyncCommandQueue
         ↓                           ↓
     Enqueue()          →        NextAsync() で待って受け取る
                                     ↓

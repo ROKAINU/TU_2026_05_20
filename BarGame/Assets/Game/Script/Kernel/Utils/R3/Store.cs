@@ -1,6 +1,8 @@
 #nullable enable
 using System;
+using System.Runtime.CompilerServices;
 using R3;
+using Game.Kernel;
 
 namespace Game.Kernel.Utils.R3
 {
@@ -11,13 +13,15 @@ namespace Game.Kernel.Utils.R3
     /// ⚠️ Unityメインスレッドからのみ使用する前提。
     /// マルチスレッド環境では Dispatch に lock が必要。
     /// </summary>
-    public sealed class Store<T> : IDisposable
+    public sealed class Store<T> : IStore<T>, IDisposable
     {
         /// <summary>
         /// ⚠️ State への購読リークの責任はユーザー側にあります。
         /// 複数の購読は .AddTo(disposable) で明確にクリーンアップしてください。
         /// </summary>
         private readonly ReactiveProperty<T> _state;
+
+        public T CurrentState => _state.Value;
 
         // R3内部にも Disposed 判定はあるが、
         // Store独自の ThrowIfDisposed（より明示的なエラーメッセージ）のために保持する
@@ -47,8 +51,8 @@ namespace Game.Kernel.Utils.R3
         /// <exception cref="ObjectDisposedException">Dispose 済みの場合</exception>
         public void Dispatch(
             Func<T, T> reducer,
-            [System.Runtime.CompilerServices.CallerMemberName] string callerName = "",
-            [System.Runtime.CompilerServices.CallerFilePath] string callerFile = "")
+            [CallerMemberName] string callerName = "",
+            [CallerFilePath] string callerFile = "")
         {
             if (reducer == null) throw new ArgumentNullException(nameof(reducer));
             ThrowIfDisposed();

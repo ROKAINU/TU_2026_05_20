@@ -3,10 +3,13 @@
     "rootNamespace": "Game.Infrastructure",
     "references": [
         "Game.Domain",
+        "Game.Application.Contracts",
         "Game.Kernel",
         "Game.Kernel.Utils.R3",
         "Game.Kernel.Utils.Cysharp",
         "VContainer",
+        "MessagePipe",
+        "MessagePipe.VContainer",
         "UniTask",
         "Unity.InputSystem"
     ],

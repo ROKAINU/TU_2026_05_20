@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Taro",
+    "level": 10,
+    "hp": 100,
+    "attack": 15.5,
+    "skills": ["Fire", "Ice"],
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": "Hanako",
+    "level": 15,
+    "hp": 150,
+    "attack": 20.3,
+    "skills": ["Heal", "Holy", "Buf"],
+    "active": true
+  },
+  {
+    "id": 3,
+    "name": "Jiro",
+    "level": 12,
+    "hp": 120,
+    "attack": 18,
+    "skills": ["Dark"],
+    "active": false
+  }
+]

@@ -7,7 +7,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using Game.Infrastructure;
-using Game.Kernel.Utils.Abstruct;
+using Game.Kernel.Utils.Abstract;
 
 namespace Game.Presentation.SceneTransition
 {

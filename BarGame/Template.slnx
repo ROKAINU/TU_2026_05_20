@@ -28,5 +28,5 @@
   <Project Path="Game.Kernel.Utils.Unity.EditTests.csproj" />
   <Project Path="Game.Application.PlayTests.csproj" />
   <Project Path="Game.csproj" />
-  <Project Path="Game.Kernel.Utils.Abstruct.csproj" />
+  <Project Path="Game.Kernel.Utils.Abstract.csproj" />
 </Solution>

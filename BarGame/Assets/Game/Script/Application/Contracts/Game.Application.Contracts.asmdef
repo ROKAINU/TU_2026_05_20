@@ -2,8 +2,8 @@
     "name": "Game.Application.Contracts",
     "rootNamespace": "Game.Application.Contracts",
     "references": [
-        "UniTask",
-        "Game.Domain"
+        "Game.Domain",
+        "Game.Kernel"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -13,5 +13,5 @@
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
-    "noEngineReferences": false
+    "noEngineReferences": true
 }

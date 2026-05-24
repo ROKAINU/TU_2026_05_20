@@ -1,6 +1,7 @@
 #nullable enable
 using UnityEngine.InputSystem;
 using Game.Domain;
+using Game.Application.Contracts;
 using Game.Kernel;
 
 namespace Game.Infrastructure
@@ -43,6 +44,21 @@ namespace Game.Infrastructure
         {
             // ESC キー
             return Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame;
+        }
+
+        public int IsShowJsonPressed()
+        {
+            // 数字キー 1, 2, 3
+            switch (Keyboard.current)
+            {
+                case null:
+                    return 0;
+                default:
+                    if (Keyboard.current.digit1Key.wasPressedThisFrame) return 1;
+                    if (Keyboard.current.digit2Key.wasPressedThisFrame) return 2;
+                    if (Keyboard.current.digit3Key.wasPressedThisFrame) return 3;
+                    return 0;
+            }
         }
     }
 }

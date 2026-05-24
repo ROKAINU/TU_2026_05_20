@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
 using VContainer;
@@ -6,13 +8,15 @@ using MessagePipe;
 using Game.Domain;
 using Game.Application;
 using Game.Application.Contracts;
+using Game.Application.Runner;
+using Game.Infrastructure;
 using Game.Infrastructure.Save;
 using Game.Infrastructure.AssetPreloader;
 using Game.Presentation;
 using Game.Presentation.SceneTransition;
 using Game.Presentation.View;
 using Game.Kernel;
-using Game.Kernel.Utils.Abstruct;
+using Game.Kernel.Utils.Abstract;
 using Game.Kernel.Utils.R3;
 
 namespace Game.Infrastructure.LifetimeScopes
@@ -26,9 +30,37 @@ namespace Game.Infrastructure.LifetimeScopes
 
         protected override void Configure(IContainerBuilder builder)
         {
+            // マスターテーブル
+            var ingredientMaster = CreateIngredientMasterTable();
+            var drinkMaster = CreateDrinkMasterTable();
+
+            builder.RegisterInstance(ingredientMaster);
+            builder.RegisterInstance(drinkMaster);
+
+            // ゲームロジック
+            builder.Register<IIngredientInventory, IngredientInventory>(Lifetime.Singleton);
+            builder.Register<DrinkCrafter>(Lifetime.Singleton);
+            
             // MessagePipe 設定
-            var messagePipeOptions = builder.RegisterMessagePipe();
-            builder.RegisterMessageBroker<TransitionSceneMessage>(messagePipeOptions);
+            var options = builder.RegisterMessagePipe();
+
+            builder.RegisterEvent<TransitionSceneMessage>(options);
+            builder.RegisterEvent<TitleStartedMessage>(options);
+            builder.RegisterEvent<ResultStartedMessage>(options);
+            builder.RegisterEvent<GameStartedMessage>(options);
+            builder.RegisterEvent<GamePauseMessage>(options);
+            builder.RegisterEvent<GameFinishedMessage>(options);
+        
+            // ========================================
+            // Domain層
+            // ========================================
+            
+            builder.Register<Store<GameGlobalState>>(Lifetime.Singleton)
+                .WithParameter(GameGlobalState.Default)
+                .As<IStore<GameGlobalState>>().AsSelf();
+            builder.Register<Store<GameSettingState>>(Lifetime.Singleton)
+                .WithParameter(GameSettingState.Default)
+                .As<IStore<GameSettingState>>().AsSelf();
 
             // ========================================
             // Kernel層：Logging
@@ -39,17 +71,9 @@ namespace Game.Infrastructure.LifetimeScopes
             // Infrastructure層：永続化・UI
             // ========================================
             builder.RegisterInstance(sceneCatalog);
-            builder.RegisterComponentInHierarchy<SceneTransitioner>();
-            builder.RegisterComponentInHierarchy<ScreenFader>();
-            builder.Register<Store<GameGlobalState>>(Lifetime.Singleton)
-                .WithParameter(GameGlobalState.Default);
-            builder.Register<Store<GameSettingState>>(Lifetime.Singleton)
-                .WithParameter(GameSettingState.Default);
             builder.Register<SaveMigrator>(Lifetime.Singleton);
             builder.Register<ISaveService, PlayerPrefsSaveService>(Lifetime.Singleton);
             builder.Register<ISaveDataApplier, SaveDataApplier>(Lifetime.Singleton);
-            builder.RegisterEntryPoint<AudioSettingsPresenter>()
-                .As<IAudioSettingsPresenter>();
             builder.Register<SettingsDebouncedSaver>(Lifetime.Singleton);
             builder.RegisterEntryPoint<SettingsDebouncedSaverEntryPoint>(Lifetime.Singleton);
 
@@ -62,11 +86,15 @@ namespace Game.Infrastructure.LifetimeScopes
             builder.Register<IRandom, UnityRandomImpl>(Lifetime.Singleton);
 
             // ========================================
-            // Presentation層：Audio
+            // Presentation層
             // ========================================
             builder.RegisterInstance(audioMixer);
             builder.RegisterComponent(bgmPlayer);
             builder.RegisterComponent(sePlayer);
+            builder.RegisterEntryPoint<AudioSettingsPresenter>()
+                .As<IAudioSettingsPresenter>();
+            builder.RegisterComponentInHierarchy<SceneTransitioner>();
+            builder.RegisterComponentInHierarchy<ScreenFader>();
 
             // --- シーンロード戦略の切り替え ---
 #if UNITY_ROOM
@@ -106,6 +134,31 @@ namespace Game.Infrastructure.LifetimeScopes
                 return logger;
             });
 #endif
+        }
+
+        // ===== Factory Methods =====
+        private IngredientMasterTable CreateIngredientMasterTable()
+        {
+            var records = MasterDataLoader.Load<IngredientMasterRecord>(
+                IngredientMasterRecord.FilePath);
+
+            var dict = records
+                .Select(IngredientMasterConverter.ToDomain)
+                .ToDictionary(x => x.IngredientId);
+
+            return new IngredientMasterTable(dict);
+        }
+
+        private DrinkMasterTable CreateDrinkMasterTable()
+        {
+            var records = MasterDataLoader.Load<DrinkMasterRecord>(
+                DrinkMasterRecord.FilePath);
+
+            var dict = records
+                .Select(DrinkMasterConverter.ToDomain)
+                .ToDictionary(x => x.DrinkId);
+
+            return new DrinkMasterTable(dict);
         }
     }
 }

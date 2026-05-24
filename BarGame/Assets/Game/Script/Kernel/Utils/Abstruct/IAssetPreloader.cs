@@ -6,7 +6,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine.ResourceManagement.ResourceProviders;
 
 
-namespace Game.Kernel.Utils.Abstruct
+namespace Game.Kernel.Utils.Abstract
 {
     /// <summary>
     /// アセットの事前ロード（プリロード）と取得を担うインターフェース。

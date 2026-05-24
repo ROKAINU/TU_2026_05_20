@@ -7,9 +7,11 @@
         "Game.Application.Contracts",
         "Game.Kernel",
         "Game.Kernel.Utils.Cysharp",
+        "Game.Kernel.Utils.R3",
         "VContainer",
         "UniTask",
-        "UnityEngine"
+        "UnityEngine",
+        "R3"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

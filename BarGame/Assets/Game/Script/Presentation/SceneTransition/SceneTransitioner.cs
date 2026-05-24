@@ -12,7 +12,7 @@ using Game.Infrastructure;
 using Game.Presentation;
 using Game.Presentation.View;
 using Game.Kernel;
-using Game.Kernel.Utils.Abstruct;
+using Game.Kernel.Utils.Abstract;
 
 namespace Game.Presentation.SceneTransition
 {

@@ -8,7 +8,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using Game.Kernel;
-using Game.Kernel.Utils.Abstruct;
+using Game.Kernel.Utils.Abstract;
 
 namespace Game.Infrastructure.AssetPreloader
 {
